@@ -3,4 +3,8 @@ project(magic C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(magic main.c)
+add_subdirectory(src)
+
+include_directories(./src/)
+add_executable(magictest main.c)
+target_link_libraries(magictest magic)
